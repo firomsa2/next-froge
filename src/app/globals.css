@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surface layers */
+  --color-base: #0A0A0F;
+  --color-elevated: #0F0F1A;
+  --color-floating: #14141F;
+
+  /* Brand accents */
+  --color-cyan: #00F5C4;
+  --color-violet: #7B61FF;
+
+  /* Typography */
+  --color-ink: #F0F0F0;
+  --color-ink-muted: #888899;
+
+  /* Fonts — set by next/font via CSS variables on <html> */
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
+
+  /* Shadows */
+  --shadow-cyan-glow: 0 0 40px 0 rgba(0, 245, 196, 0.12);
+  --shadow-violet-glow: 0 0 40px 0 rgba(123, 97, 255, 0.14);
+  --shadow-card: 0 4px 24px 0 rgba(0, 0, 0, 0.5), 0 1px 0 0 rgba(255, 255, 255, 0.04) inset;
+
+  /* Border radius */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+
+  /* Animations */
+  --animate-grid-breathe: grid-breathe 4s ease-in-out infinite;
+  --animate-scroll-bounce: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes grid-breathe {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.65; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Glassmorphism utility */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #00F5C4 0%, #7B61FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(0, 245, 196, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 196, 0.045) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0A0A0F;
+  }
+
+  body {
+    font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+    color: #F0F0F0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0A0A0F;
+  }
+
+  ::selection {
+    background: rgba(0, 245, 196, 0.2);
+    color: #F0F0F0;
+  }
+
+  :focus-visible {
+    outline: 2px solid #00F5C4;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne), ui-sans-serif, sans-serif;
+    line-height: 1.1;
+  }
+}

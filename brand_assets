@@ -1,0 +1,329 @@
+# Agency Website Development Plan
+
+## AI-Powered Development & Automation Agency
+
+---
+
+## BRAND DIRECTION
+
+**Agency Name Suggestion:** use "NexForge" — Claude will use it throughout)\_
+
+**Tagline:** "We Build Smarter. We Automate Everything."
+
+**Aesthetic Direction:**
+
+- Dark theme with electric accent colors (cyan or lime green)
+- Futuristic, tech-forward, high-contrast
+- Clean but bold — not corporate, not playful
+- Feels like a premium tech company, not a freelancer portfolio
+
+**Fonts:**
+
+- Display: Syne or Clash Display (bold headlines)
+- Body: DM Sans or Neue Haas (readable, modern)
+
+**Color Palette:**
+
+- Background: #0A0A0F (near black)
+- Primary Accent: #00F5C4 (electric cyan)
+- Secondary Accent: #7B61FF (violet)
+- Text: #F0F0F0 (off white)
+- Muted: #888899 (gray for subtitles)
+
+---
+
+## SITE STRUCTURE — 7 SECTIONS (Single Page)
+
+---
+
+### SECTION 1: HERO
+
+**Purpose:** Instantly communicate who you are and what you do.
+
+**Content:**
+
+- Navigation: Logo | Services | Work | About | Contact [CTA Button]
+- Big headline (2 lines):
+  > "We Build Digital Products.
+  > Powered by AI Automation."
+- Subheadline:
+  > "Full-stack development meets intelligent automation — helping businesses ship faster and work smarter."
+- Two CTA buttons:
+  - [Start a Project] — primary
+  - [See Our Work] — secondary ghost button
+- Background: Animated particle mesh or grid lines with subtle glow
+
+**Claude Instructions:**
+
+```
+Build a dark hero section with a large two-line headline using Syne font.
+Add an animated CSS grid/particle background. Include a sticky navbar with
+logo on left and nav links on right. Two CTA buttons — one solid cyan (#00F5C4),
+one ghost outline. Add a scroll-down indicator arrow at bottom.
+```
+
+---
+
+### SECTION 2: SERVICES
+
+**Purpose:** Show exactly what you offer — make it feel premium.
+
+**Content — 4 Service Cards:**
+
+1. **Full-Stack Development**
+   - Icon: Code brackets
+   - Description: "We build fast, scalable web apps, APIs, and SaaS products using modern frameworks — from MVP to production."
+   - Tags: Next.js · Node.js · Supabase · React
+
+2. **AI Integration**
+   - Icon: Brain/circuit
+   - Description: "We embed AI into your product — chatbots, LLM pipelines, smart search, content generation, and more."
+   - Tags: Claude API · OpenAI · LangChain · RAG
+
+3. **Workflow Automation**
+   - Icon: Lightning bolt
+   - Description: "We automate your repetitive business processes — lead handling, onboarding, reporting, and internal ops."
+   - Tags: n8n · Make · Zapier · Webhooks
+
+4. **SaaS Product Building**
+   - Icon: Layers
+   - Description: "From idea to launched product — we design, build, and deploy complete SaaS platforms for startups and businesses."
+   - Tags: Architecture · Auth · Billing · Deployment
+
+**Claude Instructions:**
+
+```
+Build a services section with a 2x2 grid of cards on desktop, 1 column on mobile.
+Each card has: top icon, title, description, and tag pills at the bottom.
+Cards have a subtle border with hover glow effect (cyan). Use glassmorphism
+card style (dark bg with slight transparency and border).
+```
+
+---
+
+### SECTION 3: HOW WE WORK (Process)
+
+**Purpose:** Build trust — show you're organized and professional.
+
+**Content — 4 Steps:**
+
+1. **Discovery Call** — We understand your goals, stack, and timeline in a free 30-min session.
+2. **Proposal & Scope** — You receive a clear plan, timeline, and fixed price within 48 hours.
+3. **Agile Build** — We ship in 1–2 week sprints with demos after every milestone.
+4. **Launch & Support** — We deploy, monitor, and support your product after go-live.
+
+**Claude Instructions:**
+
+```
+Build a horizontal step-by-step process section with 4 steps connected by
+a dashed line (desktop) or vertical line (mobile). Each step has a number
+badge, title, and short description. Use staggered fade-in animation on scroll.
+```
+
+---
+
+### SECTION 4: WORK / CASE STUDIES
+
+**Purpose:** Prove you can deliver — even with concept projects initially.
+
+**Content — 3 Project Cards:**
+
+> (Use placeholder/concept projects until you have real ones)
+
+1. **Project: LeadFlow AI**
+   - Type: SaaS · AI Automation
+   - Description: "An AI-powered lead capture and nurture platform for SMBs. Automated follow-ups, CRM pipeline, and smart onboarding."
+   - Stack: Next.js, Supabase, Claude API, n8n
+   - Image: Dashboard screenshot mockup
+
+2. **Project: ShopBot**
+   - Type: E-commerce · Chatbot
+   - Description: "AI customer support bot for a Shopify store — handles 80% of inquiries without human intervention."
+   - Stack: React, Node.js, OpenAI, Shopify API
+   - Image: Chat UI mockup
+
+3. **Project: OpsAutomator**
+   - Type: Workflow Automation
+   - Description: "End-to-end operations automation for a logistics company — from order intake to delivery notification."
+   - Stack: n8n, Make, Twilio, Google Sheets API
+   - Image: Flow diagram mockup
+
+**Claude Instructions:**
+
+```
+Build a project showcase section with 3 cards in a horizontal scroll on mobile
+and 3-column grid on desktop. Each card: full image top half, project info
+bottom half with type badge, title, description, and stack tags. Add hover
+state that lifts the card and reveals a subtle overlay with a "View Project"
+link.
+```
+
+---
+
+### SECTION 5: WHY US (Differentiators)
+
+**Purpose:** Answer "why hire you instead of someone else?"
+
+**Content — 4 Points (icon + title + text):**
+
+1. **AI-Native Team** — We don't bolt AI on. Every project is designed with AI from the ground up.
+2. **Full-Stack + Automation** — Rare combo. One team handles dev AND automation — no coordination gaps.
+3. **Fast Delivery** — MVPs in 4–8 weeks. We ship fast without cutting corners.
+4. **Fixed Pricing** — No surprise invoices. You know the total cost before we write a line of code.
+
+**Claude Instructions:**
+
+```
+Build a 2x2 stats/features grid with large icons, bold titles, and short
+descriptions. Add a large background number or geometric shape behind each
+card for visual depth. Section should have a slight background color shift
+from the rest of the page (e.g. #0F0F1A).
+```
+
+---
+
+### SECTION 6: TEAM
+
+**Purpose:** Put faces to the agency — builds trust fast.
+
+**Content:**
+
+Intro line: "A focused team of 3 — no account managers, no middlemen. You work directly with us."
+
+3 Team Cards:
+
+- **[Your Name]** — AI Automation Expert · "I design and build intelligent systems that turn manual work into automated pipelines."
+- **[Dev 1 Name]** — Full-Stack Developer · "I build scalable backends and APIs that power modern web products."
+- **[Dev 2 Name]** — Full-Stack Developer · "I craft pixel-perfect UIs and seamless frontend experiences users love."
+
+**Claude Instructions:**
+
+```
+Build a team section with 3 cards side by side. Each card: circular photo
+placeholder, name, role badge, and short bio. Add a subtle colored border
+per person (e.g. cyan, violet, white) to differentiate. Keep it clean and
+minimal compared to other sections.
+```
+
+---
+
+### SECTION 7: CONTACT / CTA
+
+**Purpose:** Convert visitors into conversations.
+
+**Content:**
+
+Big headline:
+
+> "Ready to Build Something Smart?"
+
+Subline:
+
+> "Tell us about your project — we respond within 24 hours."
+
+**Contact Form Fields:**
+
+- Name
+- Email
+- Service Interest (dropdown: Development / Automation / AI Integration / SaaS / Other)
+- Project Budget (dropdown: <$2K / $2K–$5K / $5K–$15K / $15K+)
+- Message (textarea)
+- [Send Message] button
+
+**Side info:**
+
+- 📧 hello@youragency.com
+- 💬 WhatsApp link
+- 🔗 LinkedIn link
+
+**Claude Instructions:**
+
+```
+Build a full-width contact section with a two-column layout: left side has
+the headline, subline, and contact info; right side has the form. Form inputs
+are dark with cyan focus borders. CTA button is full-width solid cyan with
+dark text. Add a subtle gradient glow behind the section.
+```
+
+---
+
+### FOOTER
+
+**Content:**
+
+- Logo + tagline
+- Quick links: Services · Work · About · Contact
+- Social: LinkedIn · GitHub · Twitter/X
+- Copyright: © 2025 [Agency Name]. All rights reserved.
+
+---
+
+## FULL PROMPT TO GIVE CLAUDE
+
+Copy and paste this entire prompt:
+
+---
+
+```
+Build a complete single-page agency website for an AI-powered development
+and automation agency. The team is 3 people: 1 AI automation expert and
+2 full-stack developers.
+
+DESIGN DIRECTION:
+- Dark theme: background #0A0A0F
+- Primary accent: #00F5C4 (electric cyan)
+- Secondary accent: #7B61FF (violet)
+- Display font: Syne (import from Google Fonts)
+- Body font: DM Sans (import from Google Fonts)
+- Aesthetic: futuristic, premium tech agency, bold but clean
+- Fully responsive (mobile + desktop)
+
+SECTIONS TO BUILD (in order):
+1. Sticky navbar (logo left, links right, CTA button)
+2. Hero — big headline, subheadline, 2 CTA buttons, animated background
+3. Services — 4 glassmorphism cards (Dev, AI Integration, Automation, SaaS)
+4. Process — 4 horizontal steps connected by dashed line
+5. Work/Portfolio — 3 project cards with hover effects
+6. Why Us — 4 differentiator blocks (2x2 grid)
+7. Team — 3 team member cards with photo placeholders
+8. Contact — 2-column layout with form (name, email, service, budget, message)
+9. Footer — logo, links, socials, copyright
+
+TECHNICAL REQUIREMENTS:
+- Single HTML file with embedded CSS and JS
+- Smooth scroll navigation
+- Scroll-triggered fade-in animations using Intersection Observer
+- Mobile hamburger menu
+- Form with basic validation
+- No external JS frameworks — vanilla HTML/CSS/JS only
+- Use placeholder images from https://placehold.co for team/project images
+
+Use all the section content, descriptions, and service details I've provided.
+Make it look like a $10,000 website, not a template.
+```
+
+---
+
+## WHAT TO CUSTOMIZE BEFORE GIVING TO CLAUDE
+
+Replace these placeholders:
+
+- [ ] Agency name and logo text
+- [ ] Team member names and photos
+- [ ] Real email and WhatsApp number
+- [ ] LinkedIn/GitHub URLs
+- [ ] Real project names (or keep concepts for now)
+
+---
+
+## AFTER THE WEBSITE IS BUILT — NEXT STEPS
+
+1. **Deploy free:** Vercel or Netlify (drag and drop the HTML file)
+2. **Domain:** Buy on Namecheap (~$10/year)
+3. **Contact form:** Connect to Formspree.io (free, no backend needed)
+4. **Analytics:** Add Google Analytics or Plausible
+5. **SEO:** Add meta tags for "AI development agency" keywords
+
+```
+
+```
