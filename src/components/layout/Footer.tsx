@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
 
 const SOCIAL_LINKS = [
@@ -32,22 +33,22 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-elevated">
+    <footer className="border-t border-cyan/10 bg-elevated">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="w-fit font-display text-xl font-bold tracking-[-0.02em] text-ink transition-opacity hover:opacity-80"
             >
-              <span className="text-cyan">Nex</span>Forge
-            </a>
-            <p className="font-body text-sm leading-relaxed text-ink-muted max-w-[200px]">
-              We Build Smarter.<br />We Automate Everything.
+              <span className="text-cyan">horn</span>link
+            </Link>
+            <p className="font-body text-sm leading-relaxed text-ink-muted max-w-[220px]">
+              Smart, reliable, transformative technology — built for digital transformation.
             </p>
-            <p className="font-body text-xs text-ink-muted/60">
-              hello@nexforge.dev
+            <p className="font-body text-xs text-ink-muted/70">
+              hello@hornlink.et
             </p>
           </div>
 
@@ -59,12 +60,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-3" role="list">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="font-body text-sm text-ink-muted transition-colors duration-200 hover:text-ink"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -94,12 +95,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="font-body text-xs text-ink-muted/60">
-            © 2026 NexForge. All rights reserved.
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-cyan/10 pt-8 sm:flex-row">
+          <p className="font-body text-xs text-ink-muted/70">
+            © 2026 Hornlink Technology. All rights reserved.
           </p>
-          <p className="font-body text-xs text-ink-muted/40">
-            Built with precision. Powered by automation.
+          <p className="font-body text-xs text-ink-muted/50">
+            Founded 2024 · Digital transformation & intelligent innovation.
           </p>
         </div>
       </div>

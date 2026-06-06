@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* Surface layers */
-  --color-base: #0A0A0F;
-  --color-elevated: #0F0F1A;
-  --color-floating: #14141F;
+  /* Surface layers — light theme */
+  --color-base: #FFFFFF;
+  --color-elevated: #F4F7F7;
+  --color-floating: #FFFFFF;
 
   /* Brand accents */
-  --color-cyan: #00F5C4;
-  --color-violet: #7B61FF;
+  --color-cyan: #0E7C7B;   /* deep teal — primary */
+  --color-violet: #E8A33D; /* warm amber — secondary */
 
   /* Typography */
-  --color-ink: #F0F0F0;
-  --color-ink-muted: #888899;
+  --color-ink: #0F2E2E;       /* near-black teal ink */
+  --color-ink-muted: #5B6B6B; /* slate gray */
 
   /* Fonts — set by next/font via CSS variables on <html> */
   --font-display: var(--font-syne), sans-serif;
   --font-body: var(--font-dm-sans), sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", monospace;
 
-  /* Shadows */
-  --shadow-cyan-glow: 0 0 40px 0 rgba(0, 245, 196, 0.12);
-  --shadow-violet-glow: 0 0 40px 0 rgba(123, 97, 255, 0.14);
-  --shadow-card: 0 4px 24px 0 rgba(0, 0, 0, 0.5), 0 1px 0 0 rgba(255, 255, 255, 0.04) inset;
+  /* Shadows — soft, teal-tinted for a light surface */
+  --shadow-cyan-glow: 0 12px 40px -8px rgba(14, 124, 123, 0.22);
+  --shadow-violet-glow: 0 12px 40px -8px rgba(232, 163, 61, 0.26);
+  --shadow-card: 0 1px 2px 0 rgba(15, 46, 46, 0.04), 0 8px 30px -10px rgba(15, 46, 46, 0.10);
 
   /* Border radius */
   --radius-card: 1rem;
@@ -48,17 +48,18 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility — light surface */
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid rgba(14, 124, 123, 0.12);
+    box-shadow: 0 1px 2px 0 rgba(15, 46, 46, 0.04), 0 8px 30px -12px rgba(15, 46, 46, 0.10);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #00F5C4 0%, #7B61FF 100%);
+    background: linear-gradient(120deg, #0E7C7B 0%, #E8A33D 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -66,38 +67,40 @@
 
   .bg-grid {
     background-image:
-      linear-gradient(rgba(0, 245, 196, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 245, 196, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(14, 124, 123, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 124, 123, 0.05) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 }
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #0A0A0F;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
   }
 
   body {
     font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-    color: #F0F0F0;
+    color: #0F2E2E;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #0A0A0F;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(0, 245, 196, 0.2);
-    color: #F0F0F0;
+    background: rgba(14, 124, 123, 0.18);
+    color: #0F2E2E;
   }
 
   :focus-visible {
-    outline: 2px solid #00F5C4;
+    outline: 2px solid #0E7C7B;
     outline-offset: 3px;
     border-radius: 4px;
   }

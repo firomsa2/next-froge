@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -8,17 +9,18 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import type { ContactFormData } from "@/types";
 import { CONTACT_SERVICES, CONTACT_BUDGETS } from "@/lib/constants";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 const inputBase =
-  "w-full rounded-xl border border-white/8 bg-floating px-4 py-3 font-body text-sm text-ink placeholder:text-ink-muted/50 transition-[border-color] duration-200 outline-none focus:border-cyan/50 focus-visible:border-cyan/50";
+  "w-full rounded-xl border border-cyan/15 bg-elevated px-4 py-3 font-body text-sm text-ink placeholder:text-ink-muted/60 transition-[border-color] duration-200 outline-none focus:border-cyan focus-visible:border-cyan";
 
 const errorClass = "font-body text-xs text-red-400 mt-1";
 
 const INFO_ROWS = [
   {
     label: "Email",
-    value: "hello@nexforge.dev",
-    href: "mailto:hello@nexforge.dev",
+    value: "hello@hornlink.et",
+    href: "mailto:hello@hornlink.et",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -28,8 +30,8 @@ const INFO_ROWS = [
   },
   {
     label: "WhatsApp",
-    value: "+1 (555) 000-0000",
-    href: "https://wa.me/15550000000",
+    value: "+251 900 000 000",
+    href: "https://wa.me/251900000000",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
@@ -38,8 +40,8 @@ const INFO_ROWS = [
   },
   {
     label: "LinkedIn",
-    value: "NexForge Agency",
-    href: "https://linkedin.com/company/nexforge",
+    value: "Hornlink Technology",
+    href: "https://linkedin.com/company/hornlink",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -56,9 +58,34 @@ export default function Contact() {
     reset,
   } = useForm<ContactFormData>({ mode: "onBlur" });
 
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    await new Promise((r) => setTimeout(r, 800));
-    console.log("Form submitted:", data);
+    setSubmitError(null);
+
+    if (!isSupabaseConfigured || !supabase) {
+      setSubmitError(
+        "The contact form isn't connected yet. Please email us at hello@hornlink.et.",
+      );
+      return;
+    }
+
+    const { error } = await supabase.from("contact_messages").insert({
+      name: data.name,
+      email: data.email,
+      service: data.service,
+      budget: data.budget,
+      message: data.message,
+    });
+
+    if (error) {
+      console.error("Supabase insert error:", error.message);
+      setSubmitError(
+        "Something went wrong sending your message. Please try again, or email hello@hornlink.et.",
+      );
+      return;
+    }
+
     reset();
   };
 
@@ -191,7 +218,7 @@ export default function Contact() {
                     <select
                       id="service"
                       className={`${inputBase} cursor-pointer`}
-                      style={{ colorScheme: "dark" }}
+                      style={{ colorScheme: "light" }}
                       {...register("service", { required: "Select a service" })}
                     >
                       <option value="">Select…</option>
@@ -209,7 +236,7 @@ export default function Contact() {
                     <select
                       id="budget"
                       className={`${inputBase} cursor-pointer`}
-                      style={{ colorScheme: "dark" }}
+                      style={{ colorScheme: "light" }}
                       {...register("budget", { required: "Select a budget range" })}
                     >
                       <option value="">Select…</option>
@@ -238,6 +265,15 @@ export default function Contact() {
                   />
                   {errors.message && <p className={errorClass}>{errors.message.message}</p>}
                 </div>
+
+                {submitError && (
+                  <p
+                    role="alert"
+                    className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 font-body text-sm text-red-600"
+                  >
+                    {submitError}
+                  </p>
+                )}
 
                 <Button
                   type="submit"

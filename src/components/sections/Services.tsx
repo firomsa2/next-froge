@@ -1,6 +1,7 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GlassCard from "@/components/ui/GlassCard";
 import SectionLabel from "@/components/ui/SectionLabel";
+import Button from "@/components/ui/Button";
 import { SERVICES } from "@/lib/constants";
 
 export default function Services() {
@@ -9,15 +10,15 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="mb-16 flex flex-col gap-4">
-          <SectionLabel>What We Do</SectionLabel>
+          <SectionLabel>Our Services</SectionLabel>
           <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-tight tracking-[-0.025em] text-ink">
-            Services Built for
+            Solutions That
             <br />
-            <span className="text-ink-muted">the Modern Stack</span>
+            <span className="text-ink-muted">Drive Transformation</span>
           </h2>
           <p className="max-w-lg font-body text-base leading-relaxed text-ink-muted">
-            From infrastructure to AI layers — we handle the full spectrum so
-            you don&apos;t have to manage multiple vendors.
+            From AI-powered websites to intelligent automation and smart business
+            systems — Hornlink delivers end-to-end, so you don&apos;t juggle vendors.
           </p>
         </AnimatedSection>
 
@@ -75,7 +76,7 @@ export default function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-white/8 bg-white/4 px-3 py-1 font-mono text-[11px] text-ink-muted"
+                      className="rounded-full border border-cyan/15 bg-cyan/5 px-3 py-1 font-mono text-[11px] text-ink-muted"
                     >
                       {tag}
                     </span>
@@ -85,6 +86,16 @@ export default function Services() {
             </AnimatedSection>
           ))}
         </div>
+
+        {/* View all */}
+        <AnimatedSection delay={0.1} className="mt-12 flex justify-center">
+          <Button variant="ghost" size="md" href="/services">
+            Explore All Services
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Button>
+        </AnimatedSection>
       </div>
     </section>
   );

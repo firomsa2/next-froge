@@ -3,188 +3,582 @@ import type {
   ServiceItem,
   ProcessStep,
   ProjectItem,
+  ProjectCategory,
   Differentiator,
   TeamMember,
+  BlogPost,
+  ValuePillar,
 } from "@/types";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Work", href: "/work" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
+
+export const COMPANY = {
+  name: "Hornlink",
+  fullName: "Hornlink Technology",
+  tagline: "Smart, Reliable, Transformative Technology.",
+  founded: "2024",
+  email: "hello@hornlink.et",
+  phone: "+251 900 000 000",
+  whatsapp: "https://wa.me/251900000000",
+  linkedin: "https://linkedin.com/company/hornlink",
+};
+
+export const ABOUT = {
+  vision:
+    "To become the go-to partner in technology innovation — empowering individuals and businesses through smart, reliable, and transformative solutions.",
+  mission:
+    "To design and deliver innovative technology solutions that simplify life, empower businesses, and drive digital transformation across the world. We merge creativity, intelligence, and technology to build sustainable solutions that create real impact and lasting value for our clients.",
+  about: [
+    "Founded in 2024, Hornlink Technology is a professional technology firm dedicated to delivering end-to-end digital transformation and intelligent innovation solutions across industries.",
+    "Our approach is innovation-driven — blending creativity, technical expertise, and strategic thinking to co-create practical, scalable, and future-ready solutions that truly make an impact.",
+    "We work with businesses, startups, public institutions, and organizations to help them leverage technology for efficiency, growth, and sustainability. Our expertise spans AI automation, intelligent systems development, and digital experience design.",
+  ],
+};
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: "dev",
+    id: "awd",
     iconPath:
-      "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+      "M2 5a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2H4a2 2 0 01-2-2zM8 21h8M12 18v3",
     iconViewBox: "0 0 24 24",
-    title: "Full-Stack Development",
+    title: "AI-Powered Website Design & Development",
     description:
-      "We architect and build scalable web applications from database to UI. Clean code, rapid shipping, no technical debt left behind.",
-    tags: ["Next.js", "Node.js", "Supabase", "TypeScript"],
+      "Smart, adaptive websites and dashboards powered by AI — combining aesthetics, functionality, and intelligence. Our platforms learn from user behavior, automate engagement, and convert 24/7.",
+    tags: ["UX Optimization", "Responsive", "Chatbots", "SEO"],
     accentColor: "cyan",
   },
   {
-    id: "ai",
-    iconPath:
-      "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2",
-    iconViewBox: "0 0 24 24",
-    title: "AI Integration",
-    description:
-      "Embed large language models, computer vision, and predictive analytics directly into your product. We turn AI hype into working features.",
-    tags: ["Claude API", "OpenAI", "LangChain", "RAG"],
-    accentColor: "violet",
-  },
-  {
-    id: "automation",
+    id: "awa",
     iconPath:
       "M13 10V3L4 14h7v7l9-11h-7z",
     iconViewBox: "0 0 24 24",
-    title: "Workflow Automation",
+    title: "AI & Workflow Automation",
     description:
-      "Eliminate repetitive work across your entire operation. We connect your tools, build pipelines, and let your team focus on what matters.",
-    tags: ["n8n", "Make", "Zapier", "Webhooks"],
-    accentColor: "cyan",
+      "Intelligent automation that streamlines operations and eliminates repetitive tasks. We connect your systems so your team works smarter, not harder — saving time and reducing costs.",
+    tags: ["CRM/ERP", "Custom Bots", "Voice AI", "Integrations"],
+    accentColor: "violet",
   },
   {
-    id: "saas",
+    id: "sbsd",
     iconPath:
       "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
     iconViewBox: "0 0 24 24",
-    title: "SaaS Development",
+    title: "Smart Business Systems Development",
     description:
-      "From MVP to production-ready platform. We build the infrastructure, billing, auth, and core features your SaaS needs to launch and scale.",
-    tags: ["SaaS", "Stripe", "Auth.js", "Postgres"],
+      "Tailored digital systems that streamline operations, improve decision-making, and scale effectively. Each system integrates innovation, efficiency, and intelligence into your business model.",
+    tags: ["Dashboards", "Analytics", "IoT", "Enterprise Apps"],
+    accentColor: "cyan",
+  },
+  {
+    id: "tm",
+    iconPath:
+      "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.42A12 12 0 0112 21a12 12 0 01-6.16-10.42L12 14z",
+    iconViewBox: "0 0 24 24",
+    title: "Training & Mentorship",
+    description:
+      "Hands-on learning and mentorship in AI, automation, and digital innovation. We equip individuals and organizations with the skills and mindset to thrive in the digital age.",
+    tags: ["AI Skills", "Full-Stack", "1:1 Mentorship", "Teams"],
     accentColor: "violet",
   },
 ];
+
+/* Per-service detail used on the dedicated /services page (from the profile). */
+export const SERVICE_DETAILS: Record<
+  string,
+  { tagline: string; offerings: string[]; impact: string }
+> = {
+  awd: {
+    tagline: "Building Intelligent Digital Experiences",
+    offerings: [
+      "AI-enhanced web design and UX optimization",
+      "Dynamic, responsive, and data-driven platforms",
+      "Integration with chatbots and automation tools",
+      "SEO and performance-focused architecture",
+    ],
+    impact:
+      "We transform your online presence into a living, intelligent platform that attracts, engages, and converts — 24/7.",
+  },
+  awa: {
+    tagline: "Redefining Efficiency Through Intelligent Automation",
+    offerings: [
+      "AI-driven workflow automation",
+      "Integration of smart CRM and ERP systems",
+      "Custom bots and voice assistants for operations",
+      "Data synchronization and process optimization",
+    ],
+    impact:
+      "We turn complex, manual processes into efficient, intelligent systems that save time, reduce costs, and scale with your business.",
+  },
+  sbsd: {
+    tagline: "Engineering Intelligent Systems for Smarter Growth",
+    offerings: [
+      "Custom business management systems and dashboards",
+      "Data analytics and reporting platforms",
+      "IoT and smart control systems integration",
+      "Enterprise-level applications for growth and scalability",
+    ],
+    impact:
+      "We empower organizations to turn data into action and operations into intelligent ecosystems that drive sustainable success.",
+  },
+  tm: {
+    tagline: "Empowering the Next Generation of Tech Innovators",
+    offerings: [
+      "AI and automation skill development",
+      "Training for individuals and organizations on using AI",
+      "Full-stack web development and programming training",
+      "One-on-one mentorship for developers and tech teams",
+    ],
+    impact:
+      "We bridge the gap between learning and doing, transforming talent into innovation powerhouses ready for tomorrow's challenges.",
+  },
+};
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: 1,
     title: "Discovery",
     description:
-      "We map your goals, constraints, and user needs in a focused kickoff. No fluff — just the clarity needed to ship right the first time.",
+      "We map your goals, constraints, and users in a focused kickoff. Clear thinking before code — so we build the right thing the first time.",
   },
   {
     number: 2,
-    title: "Architecture",
+    title: "Design & Architecture",
     description:
-      "We design the system before writing a line of code. Scalable by default, secure by design, and built to evolve with your product.",
+      "We design intelligent systems before writing a line of code. Scalable by default, secure by design, and built to evolve with your business.",
   },
   {
     number: 3,
     title: "Build",
     description:
-      "Iterative delivery with weekly check-ins. You see real progress every sprint, not a black box that opens at the end.",
+      "Iterative delivery with regular check-ins. You see real, working progress every sprint — no black box that only opens at the end.",
   },
   {
     number: 4,
     title: "Launch & Automate",
     description:
-      "We ship to production and wire the automation layer. Your new system works for you 24/7 from day one.",
+      "We ship to production and wire in the automation layer. Your new system starts working for you, around the clock, from day one.",
   },
+];
+
+export const PROJECT_CATEGORIES: Array<"All" | ProjectCategory> = [
+  "All",
+  "Websites",
+  "Automation",
+  "Systems",
+  "Apps",
 ];
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: "LeadFlow AI",
-    type: "SaaS · AI Automation",
+    slug: "intelligent-web-platform",
+    title: "Intelligent Web Platform",
+    type: "AI-Powered Website",
+    category: "Websites",
     description:
-      "An intelligent lead qualification platform that scores, enriches, and routes inbound leads automatically using Claude API and custom scoring models.",
-    stack: ["Next.js", "Supabase", "Claude API", "n8n"],
-    imageUrl: "https://placehold.co/640x400/0F1A14/00F5C4",
-    imageAlt: "LeadFlow AI dashboard showing lead pipeline",
-    imageBg: "#0F1A14",
+      "An adaptive, data-driven website with an embedded AI assistant that personalizes content, qualifies visitors, and drives conversions around the clock.",
+    stack: ["Next.js", "AI Assistant", "Analytics", "SEO"],
+    imageUrl: "/work-ai-website.jpg",
+    imageAlt: "Modern AI-powered website on a laptop screen",
+    imageBg: "#E6F0EF",
+    accentColor: "cyan",
+    client: "Regional Services Group",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "A flagship marketing site that behaves less like a brochure and more like a 24/7 sales assistant — adapting its content and calls-to-action to each visitor in real time.",
+    challenge:
+      "The client's old site was static and converted poorly. Visitors bounced before reaching the right service, and the team had no visibility into what content actually drove enquiries.",
+    solution:
+      "We rebuilt the platform on a modern, SEO-first stack and embedded an AI assistant that surfaces the most relevant service, answers questions instantly, and routes qualified leads straight to the sales team.",
+    results: [
+      "2.4× increase in qualified enquiries within the first quarter",
+      "Average time-to-answer for visitor questions dropped to seconds",
+      "Full analytics on which content converts, feeding ongoing iteration",
+    ],
   },
   {
-    title: "ShopBot",
-    type: "E-commerce · Chatbot",
+    slug: "operations-autopilot",
+    title: "Operations Autopilot",
+    type: "AI & Workflow Automation",
+    category: "Automation",
     description:
-      "A conversational shopping assistant embedded in a Shopify storefront. Handles product discovery, size recommendations, and order tracking at scale.",
-    stack: ["React", "Node.js", "OpenAI", "Shopify API"],
-    imageUrl: "https://placehold.co/640x400/0F0F1A/7B61FF",
-    imageAlt: "ShopBot interface on a product page",
-    imageBg: "#0F0F1A",
+      "An automation hub that replaced 40+ hours of weekly manual work — connecting CRM, messaging, and reporting into one self-running intelligent pipeline.",
+    stack: ["Automation", "CRM", "Custom Bots", "Webhooks"],
+    imageUrl: "/work-automation.jpg",
+    imageAlt: "Automated workflow dashboard with connected systems",
+    imageBg: "#FBF1DF",
+    accentColor: "violet",
+    client: "Mid-Size Operations Team",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "A central automation layer that wires together the tools an operations team already uses, so routine handoffs, follow-ups, and reports run themselves.",
+    challenge:
+      "Staff spent over 40 hours a week copying data between systems, chasing follow-ups, and assembling reports by hand — slow, error-prone, and impossible to scale.",
+    solution:
+      "We mapped every repetitive process, then built event-driven automations connecting CRM, messaging, and reporting with custom bots and webhooks — with a dashboard to monitor every run.",
+    results: [
+      "40+ hours of manual work eliminated every week",
+      "Near-zero data-entry errors across connected systems",
+      "Reports that once took a day now generate automatically",
+    ],
   },
   {
-    title: "OpsAutomator",
+    slug: "smart-business-suite",
+    title: "Smart Business Suite",
+    type: "Business Systems Development",
+    category: "Systems",
+    description:
+      "A custom management system with live analytics dashboards that turned scattered spreadsheets into a single intelligent ecosystem for faster decisions.",
+    stack: ["Dashboards", "Analytics", "Cloud", "Reporting"],
+    imageUrl: "/work-business-system.jpg",
+    imageAlt: "Business analytics dashboard with charts",
+    imageBg: "#E6F0EF",
+    accentColor: "cyan",
+    client: "Growing Enterprise",
+    year: "2024",
+    liveUrl: "#",
+    overview:
+      "A tailored business-management system that consolidated dozens of disconnected spreadsheets into one secure, real-time platform leadership can trust.",
+    challenge:
+      "Critical data lived in scattered spreadsheets with no single source of truth. Leadership made decisions on stale numbers and reconciliation ate days every month.",
+    solution:
+      "We designed a cloud system with role-based access, automated data capture, and live analytics dashboards — so every team works from the same accurate, up-to-the-minute view.",
+    results: [
+      "One source of truth replacing 30+ spreadsheets",
+      "Month-end reporting cut from days to minutes",
+      "Decisions now made on live data, not last month's",
+    ],
+  },
+  {
+    slug: "executive-analytics-dashboard",
+    title: "Executive Analytics Dashboard",
+    type: "Data & Reporting Platform",
+    category: "Systems",
+    description:
+      "A real-time KPI dashboard unifying sales, finance, and operations data into one executive view with automated alerts and forecasting.",
+    stack: ["Analytics", "Data Pipeline", "Forecasting", "Cloud"],
+    imageUrl: "/work-analytics.jpg",
+    imageAlt: "Executive analytics dashboard with KPI charts",
+    imageBg: "#E6F0EF",
+    accentColor: "violet",
+    client: "Multi-Branch Retailer",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "A single executive cockpit that pulls live numbers from every branch and department, with smart alerts when something needs attention.",
+    challenge:
+      "Leaders waited on weekly slide decks to understand performance, and problems were only spotted long after they started costing money.",
+    solution:
+      "We built an automated data pipeline feeding a real-time dashboard with KPI tracking, trend forecasting, and threshold-based alerts delivered straight to decision-makers.",
+    results: [
+      "Live visibility across every branch in one screen",
+      "Issues flagged automatically before they escalate",
+      "Forecasts that make planning proactive, not reactive",
+    ],
+  },
+  {
+    slug: "ai-commerce-storefront",
+    title: "AI Commerce Storefront",
+    type: "AI-Powered Website",
+    category: "Websites",
+    description:
+      "A fast, SEO-optimized online store with AI-driven product recommendations and an assistant that guides shoppers from browse to checkout.",
+    stack: ["Next.js", "Recommendations", "Payments", "SEO"],
+    imageUrl: "/work-ecommerce.jpg",
+    imageAlt: "Online store interface on a screen",
+    imageBg: "#FBF1DF",
+    accentColor: "cyan",
+    client: "Retail Brand",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "A conversion-focused storefront where AI recommendations and an in-store assistant do the work of an attentive sales associate, at scale.",
+    challenge:
+      "The brand's catalog was large but hard to navigate, and shoppers abandoned carts before finding what they wanted.",
+    solution:
+      "We delivered a high-performance storefront with personalized recommendations, an AI shopping assistant, and a streamlined checkout — all SEO-optimized for organic growth.",
+    results: [
+      "Higher average order value from smart recommendations",
+      "Lower cart abandonment with guided checkout",
+      "Strong organic traffic from SEO-first architecture",
+    ],
+  },
+  {
+    slug: "unified-crm-platform",
+    title: "Unified CRM Platform",
+    type: "Smart Business System",
+    category: "Systems",
+    description:
+      "A custom CRM tailored to the client's real sales process — pipeline, automated follow-ups, and reporting in one place the whole team adopts.",
+    stack: ["CRM", "Automation", "Dashboards", "Integrations"],
+    imageUrl: "/work-crm.jpg",
+    imageAlt: "CRM pipeline interface",
+    imageBg: "#E6F0EF",
+    accentColor: "violet",
+    client: "Professional Services Firm",
+    year: "2024",
+    liveUrl: "#",
+    overview:
+      "A CRM built around how the team actually sells — not a generic tool they fight against — with automation that keeps the pipeline moving.",
+    challenge:
+      "Off-the-shelf CRMs didn't fit the firm's workflow, so adoption was low and deals slipped through the cracks.",
+    solution:
+      "We built a tailored CRM matching their exact stages, with automated follow-up reminders, integrated communications, and clear reporting for managers.",
+    results: [
+      "Team-wide adoption because it fits how they work",
+      "Fewer lost deals thanks to automated follow-ups",
+      "Managers get an honest, real-time view of the pipeline",
+    ],
+  },
+  {
+    slug: "elearning-portal",
+    title: "E-Learning Portal",
+    type: "Web Application",
+    category: "Apps",
+    description:
+      "An interactive learning platform with course delivery, progress tracking, assessments, and certificates — accessible on any device.",
+    stack: ["Web App", "Auth", "Video", "Progress Tracking"],
+    imageUrl: "/work-elearning.jpg",
+    imageAlt: "E-learning platform on a laptop",
+    imageBg: "#FBF1DF",
+    accentColor: "cyan",
+    client: "Training Organization",
+    year: "2024",
+    liveUrl: "#",
+    overview:
+      "A complete e-learning portal that lets an organization deliver courses, track learner progress, and issue certificates without manual admin.",
+    challenge:
+      "Training was run over email and spreadsheets, with no way to track who completed what or to scale beyond a handful of learners.",
+    solution:
+      "We built a responsive learning platform with secure accounts, structured courses, video lessons, automated assessments, and certificate generation.",
+    results: [
+      "Hundreds of learners onboarded without extra admin",
+      "Automatic progress tracking and certification",
+      "Accessible on phone, tablet, or desktop",
+    ],
+  },
+  {
+    slug: "logistics-tracking-system",
+    title: "Logistics Tracking System",
     type: "Workflow Automation",
+    category: "Automation",
     description:
-      "A no-code automation hub that replaced 40+ hours of weekly manual work for an ops team — built on n8n with custom nodes and a management dashboard.",
-    stack: ["n8n", "Make", "Twilio", "Google Sheets API"],
-    imageUrl: "https://placehold.co/640x400/14100F/F5A500",
-    imageAlt: "OpsAutomator workflow canvas",
-    imageBg: "#14100F",
+      "End-to-end shipment tracking that automates order intake, status updates, and customer notifications from pickup to delivery.",
+    stack: ["Automation", "Notifications", "Tracking", "API"],
+    imageUrl: "/work-logistics.jpg",
+    imageAlt: "Logistics and delivery tracking",
+    imageBg: "#E6F0EF",
+    accentColor: "violet",
+    client: "Logistics Company",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "An automated tracking system that keeps customers informed at every step and frees staff from constant status-update phone calls.",
+    challenge:
+      "Order status lived in people's heads and phone calls. Customers had no visibility, and staff were swamped with 'where is my delivery?' questions.",
+    solution:
+      "We automated the full flow — order intake, status changes, and customer notifications — with live tracking and an API connecting the moving parts.",
+    results: [
+      "Customers get proactive updates without calling in",
+      "Support load dropped sharply",
+      "Full visibility from pickup to delivery",
+    ],
+  },
+  {
+    slug: "ai-support-assistant",
+    title: "AI Support Assistant",
+    type: "AI Integration",
+    category: "Apps",
+    description:
+      "A conversational AI assistant embedded in a product to answer customer questions instantly and hand off complex cases to humans.",
+    stack: ["AI Assistant", "Knowledge Base", "Chat", "Handoff"],
+    imageUrl: "/work-chatbot.jpg",
+    imageAlt: "AI chat assistant on a screen",
+    imageBg: "#FBF1DF",
+    accentColor: "cyan",
+    client: "SaaS Product",
+    year: "2025",
+    liveUrl: "#",
+    overview:
+      "An always-on AI assistant trained on the product's knowledge base, resolving the bulk of questions instantly and escalating only what truly needs a person.",
+    challenge:
+      "Support volume grew faster than the team, and customers waited hours for answers to questions the docs already covered.",
+    solution:
+      "We embedded a conversational assistant grounded in the company's knowledge base, with smart human handoff for edge cases and full conversation logging.",
+    results: [
+      "Most routine questions answered instantly, 24/7",
+      "Support team freed to focus on complex cases",
+      "Happier customers from immediate responses",
+    ],
   },
 ];
 
 export const DIFFERENTIATORS: Differentiator[] = [
   {
     number: 1,
-    iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
-    title: "We Ship Fast",
+    iconPath:
+      "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    title: "Innovation",
     description:
-      "No 6-month timelines. Our process is built around delivering working software every sprint. You see results in weeks, not quarters.",
+      "We don't follow trends — we build what's next. Every solution is designed to give you an edge in a fast-evolving digital world.",
   },
   {
     number: 2,
     iconPath:
-      "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18",
-    title: "No Account Managers",
+      "M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586M11 11a2 2 0 11-4 0 2 2 0 014 0z",
+    title: "Creativity",
     description:
-      "You work directly with the engineers building your product. No telephone games, no project manager overhead, no miscommunication.",
+      "We blend design thinking with engineering to create solutions that are as elegant as they are effective — beautiful and functional.",
   },
   {
     number: 3,
     iconPath:
-      "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-    title: "AI-Native by Default",
+      "M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-3-6.7",
+    title: "Client-Centricity",
     description:
-      "Every product we build considers where AI can reduce friction. We don't bolt it on — we architect for intelligence from the start.",
+      "Your goals lead the work. We co-create with you, communicate clearly, and treat your success as the measure of ours.",
   },
   {
     number: 4,
-    iconPath:
-      "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    title: "ROI-First Pricing",
+    iconPath: "M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3",
+    title: "Result-Oriented",
     description:
-      "We price based on value delivered, not hours logged. Fixed-scope projects mean no surprise invoices and full budget predictability.",
+      "We measure impact, not hours. Every project is built to deliver real, lasting value — efficiency, growth, and sustainable success.",
   },
+];
+
+export const CORE_VALUES: ValuePillar[] = [
+  { label: "Innovation", description: "Always building what's next." },
+  { label: "Creativity", description: "Elegant solutions, by design." },
+  { label: "Client-Centricity", description: "Your goals lead the work." },
+  { label: "Professionalism", description: "Reliable, every step." },
+  { label: "Excellence", description: "Quality without compromise." },
+  { label: "Result-Oriented", description: "Impact over activity." },
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Alex Rivera",
-    role: "AI Automation Lead",
-    bio: "Former ML engineer turned builder. Specializes in wiring LLMs into production systems that don't hallucinate on your customers.",
-    imageUrl: "https://placehold.co/200x200/0F1A14/00F5C4",
+    name: "Firomsa Abrahim",
+    role: "AI & Automation Lead",
+    bio: "Designs and builds intelligent systems that turn manual, repetitive work into automated pipelines that scale with the business.",
+    imageUrl: "/team-firomsa.png",
     accentColor: "cyan",
   },
   {
-    name: "Jordan Lee",
-    role: "Full-Stack Engineer",
-    bio: "5 years building SaaS platforms. Obsessed with performance, clean architecture, and shipping features that users actually use.",
-    imageUrl: "https://placehold.co/200x200/0F0F1A/7B61FF",
+    name: "Usmael Abdurhaman",
+    role: "Backend Engineer · 5 Years",
+    bio: "Five years building scalable backends and APIs. Obsessed with performance, clean architecture, and systems that simply don't break.",
+    imageUrl: "/team-usmael.png",
     accentColor: "violet",
   },
   {
-    name: "Sam Chen",
+    name: "Felmeta Muktar",
     role: "Full-Stack Engineer",
-    bio: "Frontend-leaning engineer with a sharp eye for design systems. If the UI doesn't feel right, the product doesn't ship.",
-    imageUrl: "https://placehold.co/200x200/141414/F0F0F0",
-    accentColor: "white",
+    bio: "Crafts pixel-perfect UIs and seamless frontend experiences. If the product doesn't feel right, it doesn't ship.",
+    imageUrl: "/team-felmeta.png",
+    accentColor: "cyan",
+  },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "ai-automation-small-business",
+    title: "How AI Automation Frees Small Teams to Do Their Best Work",
+    excerpt:
+      "Repetitive tasks quietly drain your team's time. Here's how intelligent automation gives those hours back — without adding headcount.",
+    category: "Automation",
+    date: "May 28, 2025",
+    readingTime: "5 min read",
+    author: "Hornlink Team",
+    imageUrl: "/blog-1.jpg",
+    imageAlt: "AI automation concept",
+    accentColor: "cyan",
+    content: [
+      { type: "paragraph", text: "Every small team has the same hidden tax: the hours that disappear into copying data between tools, sending the same follow-up emails, and assembling reports by hand. None of it grows the business — but all of it has to get done. AI automation is how you get those hours back without hiring more people." },
+      { type: "heading", text: "Start with the work nobody enjoys" },
+      { type: "paragraph", text: "The best automation candidates are the tasks that are repetitive, rule-based, and frequent. If a person does it the same way every time, a machine can usually do it faster and without errors. Look for the work your team quietly dreads — that's where the quickest wins live." },
+      { type: "list", items: [
+        "Moving data between your CRM, spreadsheets, and inbox",
+        "Sending reminders, confirmations, and follow-ups",
+        "Generating weekly or monthly reports",
+        "Routing new leads or tickets to the right person",
+      ] },
+      { type: "heading", text: "Automation isn't replacement — it's leverage" },
+      { type: "paragraph", text: "The goal isn't to remove people; it's to remove busywork so people can focus on judgment, relationships, and creative problem-solving — the things AI can't do. Teams that automate the routine consistently report higher morale, not lower headcount." },
+      { type: "heading", text: "How we approach it at Hornlink" },
+      { type: "paragraph", text: "We map your real processes first, identify the highest-friction steps, then build event-driven automations that connect the tools you already use. You get a dashboard to watch every run, and a system that quietly works around the clock." },
+    ],
+  },
+  {
+    slug: "ai-powered-websites",
+    title: "Why Your Next Website Should Learn From Its Visitors",
+    excerpt:
+      "Static sites are yesterday. We break down what makes an AI-powered website adapt, engage, and convert — 24 hours a day.",
+    category: "Web Design",
+    date: "May 12, 2025",
+    readingTime: "6 min read",
+    author: "Hornlink Team",
+    imageUrl: "/blog-2.jpg",
+    imageAlt: "Modern website design on screen",
+    accentColor: "violet",
+    content: [
+      { type: "paragraph", text: "A traditional website is a brochure: it says the same thing to everyone and waits. An AI-powered website behaves more like your best salesperson — it pays attention, adapts to each visitor, and never sleeps." },
+      { type: "heading", text: "What 'AI-powered' actually means" },
+      { type: "paragraph", text: "It's not a gimmick chatbot bolted onto a static page. It's a site that uses signals — what a visitor reads, searches, and clicks — to surface the most relevant content, answer questions instantly, and guide people toward the next step." },
+      { type: "list", items: [
+        "Personalized content and calls-to-action per visitor",
+        "An assistant that answers questions in seconds, 24/7",
+        "Smart lead qualification that routes hot prospects to you",
+        "Analytics that show which content actually converts",
+      ] },
+      { type: "heading", text: "Built on a fast, SEO-first foundation" },
+      { type: "paragraph", text: "Intelligence means nothing if the page is slow or invisible to search engines. We build on modern frameworks with performance and SEO baked in, so the AI layer sits on top of a site that already ranks and loads fast." },
+      { type: "heading", text: "The result: a platform, not a page" },
+      { type: "paragraph", text: "Your online presence becomes a living system that attracts, engages, and converts — and gets smarter the more it's used." },
+    ],
+  },
+  {
+    slug: "smart-business-systems",
+    title: "From Spreadsheets to Smart Systems: A Practical Roadmap",
+    excerpt:
+      "Outgrowing your spreadsheets is a good problem. Here's how to move to intelligent business systems without disrupting operations.",
+    category: "Business Systems",
+    date: "April 30, 2025",
+    readingTime: "7 min read",
+    author: "Hornlink Team",
+    imageUrl: "/blog-3.jpg",
+    imageAlt: "Business systems dashboard",
+    accentColor: "cyan",
+    content: [
+      { type: "paragraph", text: "Spreadsheets are where most businesses start — and for good reason. They're flexible and familiar. But there's a point where they stop helping and start hurting: when nobody's sure which version is current, when reconciliation eats days, and when one wrong cell quietly breaks a report." },
+      { type: "heading", text: "Signs you've outgrown spreadsheets" },
+      { type: "list", items: [
+        "Multiple people editing copies of the same file",
+        "No reliable single source of truth",
+        "Hours lost to manual reconciliation each month",
+        "Decisions made on numbers you don't fully trust",
+      ] },
+      { type: "heading", text: "Move in stages, not all at once" },
+      { type: "paragraph", text: "The mistake is trying to replace everything overnight. We migrate the highest-pain process first, prove the value, then expand. Operations keep running while the new system grows around them." },
+      { type: "heading", text: "What a smart system gives you" },
+      { type: "paragraph", text: "Role-based access, automated data capture, and live dashboards mean everyone works from the same accurate, up-to-the-minute view. Month-end reporting drops from days to minutes, and leadership finally makes decisions on real-time data." },
+      { type: "paragraph", text: "The destination isn't just 'a database instead of a spreadsheet' — it's an intelligent ecosystem that turns your data into action." },
+    ],
   },
 ];
 
 export const CONTACT_SERVICES = [
-  "Full-Stack Development",
-  "AI Integration",
-  "Workflow Automation",
-  "SaaS Development",
+  "AI-Powered Website Design & Development",
+  "AI & Workflow Automation",
+  "Smart Business Systems Development",
+  "Training & Mentorship",
   "Other",
 ];
 

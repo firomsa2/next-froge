@@ -17,36 +17,37 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexforge.dev"),
+  metadataBase: new URL("https://hornlink.et"),
   title: {
-    default: "NexForge — We Build Smarter. We Automate Everything.",
-    template: "%s | NexForge",
+    default: "Hornlink Technology — Smart, Reliable, Transformative Technology.",
+    template: "%s | Hornlink Technology",
   },
   description:
-    "NexForge is a full-stack development and AI automation agency. We build SaaS products, integrate AI, and automate business workflows.",
+    "Hornlink Technology is a digital transformation and intelligent innovation firm. We build AI-powered websites, workflow automation, and smart business systems, and offer training & mentorship.",
   keywords: [
-    "AI development agency",
-    "full-stack development",
+    "Hornlink Technology",
+    "AI automation",
+    "AI-powered website design",
     "workflow automation",
-    "SaaS development",
-    "AI integration",
-    "n8n automation",
-    "Next.js agency",
+    "smart business systems",
+    "digital transformation",
+    "tech training and mentorship",
+    "Ethiopia technology firm",
   ],
-  authors: [{ name: "NexForge" }],
+  authors: [{ name: "Hornlink Technology" }],
   openGraph: {
-    title: "NexForge — We Build Smarter. We Automate Everything.",
+    title: "Hornlink Technology — Smart, Reliable, Transformative Technology.",
     description:
-      "Full-stack development meets intelligent automation. NexForge builds the software your business runs on.",
-    url: "https://nexforge.dev",
-    siteName: "NexForge",
+      "Digital transformation and intelligent innovation. Hornlink builds AI-powered websites, automation, and smart business systems.",
+    url: "https://hornlink.et",
+    siteName: "Hornlink Technology",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexForge",
-    description: "We Build Smarter. We Automate Everything.",
+    title: "Hornlink Technology",
+    description: "Smart, Reliable, Transformative Technology.",
   },
 };
 
