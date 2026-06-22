@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
  * Self-contained animated "AI integrated into your business" illustration.
  * A central AI core pulses while orbiting business nodes (web, automation,
  * data, chat) stay connected by animated signal lines. Pure SVG + framer-motion
- * (only transform/opacity animated). On-brand teal (#0E7C7B) + amber (#E8A33D).
+ * (only transform/opacity animated). On-brand electric cyan + AI purple.
  */
 
 const NODES = [
@@ -33,7 +33,7 @@ export default function AiHeroGraphic() {
         className="pointer-events-none absolute inset-0 rounded-full"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgba(14,124,123,0.16) 0%, rgba(232,163,61,0.10) 40%, transparent 70%)",
+            "radial-gradient(circle at 50% 50%, rgba(0,212,255,0.18) 0%, rgba(108,99,255,0.14) 40%, transparent 70%)",
           filter: "blur(20px)",
         }}
         aria-hidden="true"
@@ -47,12 +47,13 @@ export default function AiHeroGraphic() {
       >
         <defs>
           <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#0E7C7B" />
-            <stop offset="100%" stopColor="#E8A33D" />
+            <stop offset="0%" stopColor="#00D4FF" />
+            <stop offset="55%" stopColor="#6C63FF" />
+            <stop offset="100%" stopColor="#00FFA3" />
           </linearGradient>
           <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#0E7C7B" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#0E7C7B" stopOpacity="0" />
+            <stop offset="0%" stopColor="#00D4FF" stopOpacity="0.40" />
+            <stop offset="100%" stopColor="#00D4FF" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -62,19 +63,19 @@ export default function AiHeroGraphic() {
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         >
-          <circle cx={CENTER} cy={CENTER} r={RADIUS} fill="none" stroke="rgba(14,124,123,0.18)" strokeWidth="1" strokeDasharray="4 6" />
+          <circle cx={CENTER} cy={CENTER} r={RADIUS} fill="none" stroke="rgba(0,145,194,0.20)" strokeWidth="1" strokeDasharray="4 6" />
         </motion.g>
-        <circle cx={CENTER} cy={CENTER} r={RADIUS - 36} fill="none" stroke="rgba(232,163,61,0.16)" strokeWidth="1" strokeDasharray="2 8" />
+        <circle cx={CENTER} cy={CENTER} r={RADIUS - 36} fill="none" stroke="rgba(108,99,255,0.18)" strokeWidth="1" strokeDasharray="2 8" />
 
         {/* Connection lines + traveling signal pulses */}
         {NODES.map((node, i) => {
           const p = polar(node.angle, RADIUS);
           return (
             <g key={`line-${node.id}`}>
-              <line x1={CENTER} y1={CENTER} x2={p.x} y2={p.y} stroke="rgba(14,124,123,0.22)" strokeWidth="1.5" />
+              <line x1={CENTER} y1={CENTER} x2={p.x} y2={p.y} stroke="rgba(0,145,194,0.22)" strokeWidth="1.5" />
               <motion.circle
                 r="3.5"
-                fill={i % 2 === 0 ? "#0E7C7B" : "#E8A33D"}
+                fill={i % 2 === 0 ? "#0091C2" : "#6C63FF"}
                 initial={{ cx: CENTER, cy: CENTER, opacity: 0 }}
                 animate={{ cx: [CENTER, p.x], cy: [CENTER, p.y], opacity: [0, 1, 0] }}
                 transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.44, ease: "easeInOut" }}
@@ -97,10 +98,10 @@ export default function AiHeroGraphic() {
                 y: { duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" },
               }}
             >
-              <circle cx={p.x} cy={p.y} r="26" fill="#FFFFFF" stroke="rgba(14,124,123,0.20)" strokeWidth="1.5" />
+              <circle cx={p.x} cy={p.y} r="26" fill="#FFFFFF" stroke="rgba(0,145,194,0.22)" strokeWidth="1.5" />
               <g
                 transform={`translate(${p.x - 11}, ${p.y - 11})`}
-                stroke={i % 2 === 0 ? "#0E7C7B" : "#E8A33D"}
+                stroke={i % 2 === 0 ? "#0091C2" : "#6C63FF"}
                 strokeWidth="1.8"
                 fill="none"
                 strokeLinecap="round"

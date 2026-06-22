@@ -30,8 +30,8 @@ const INFO_ROWS = [
   },
   {
     label: "WhatsApp",
-    value: "+251 900 000 000",
-    href: "https://wa.me/251900000000",
+    value: "+251 940433419",
+    href: "https://wa.me/251940433419",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
@@ -98,7 +98,7 @@ export default function Contact() {
       >
         <div
           style={{
-            background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,245,196,0.04) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,145,194,0.05) 0%, transparent 70%)",
           }}
           className="h-full w-full"
         />

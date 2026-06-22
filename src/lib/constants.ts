@@ -49,8 +49,8 @@ export const SERVICES: ServiceItem[] = [
     iconViewBox: "0 0 24 24",
     title: "AI-Powered Website Design & Development",
     description:
-      "Smart, adaptive websites and dashboards powered by AI — combining aesthetics, functionality, and intelligence. Our platforms learn from user behavior, automate engagement, and convert 24/7.",
-    tags: ["UX Optimization", "Responsive", "Chatbots", "SEO"],
+      "Fast, scalable web apps and AI-powered sites built for growth — SaaS platforms, dashboards, and internal tools that learn from users, automate engagement, and convert 24/7.",
+    tags: ["Next.js Apps", "SaaS Platforms", "Dashboards", "API Development"],
     accentColor: "cyan",
   },
   {
@@ -60,8 +60,8 @@ export const SERVICES: ServiceItem[] = [
     iconViewBox: "0 0 24 24",
     title: "AI & Workflow Automation",
     description:
-      "Intelligent automation that streamlines operations and eliminates repetitive tasks. We connect your systems so your team works smarter, not harder — saving time and reducing costs.",
-    tags: ["CRM/ERP", "Custom Bots", "Voice AI", "Integrations"],
+      "Remove repetitive tasks and connect your tools into self-running workflows. We build AI agents and automations that handle support, sales, and operations around the clock.",
+    tags: ["n8n", "Make.com", "Zapier", "CRM Automation"],
     accentColor: "violet",
   },
   {
@@ -71,8 +71,8 @@ export const SERVICES: ServiceItem[] = [
     iconViewBox: "0 0 24 24",
     title: "Smart Business Systems Development",
     description:
-      "Tailored digital systems that streamline operations, improve decision-making, and scale effectively. Each system integrates innovation, efficiency, and intelligence into your business model.",
-    tags: ["Dashboards", "Analytics", "IoT", "Enterprise Apps"],
+      "Replace spreadsheets with intelligent business operating systems that bring clarity and control — custom CRM, ERP, analytics, and operations dashboards built to scale.",
+    tags: ["CRM / ERP", "Analytics", "Business Intelligence", "Operations"],
     accentColor: "cyan",
   },
   {
@@ -82,8 +82,8 @@ export const SERVICES: ServiceItem[] = [
     iconViewBox: "0 0 24 24",
     title: "Training & Mentorship",
     description:
-      "Hands-on learning and mentorship in AI, automation, and digital innovation. We equip individuals and organizations with the skills and mindset to thrive in the digital age.",
-    tags: ["AI Skills", "Full-Stack", "1:1 Mentorship", "Teams"],
+      "Upskill your team and embed the right technology strategy for long-term success — hands-on AI training, automation coaching, and 1:1 mentorship for developers and teams.",
+    tags: ["AI Training", "Automation Coaching", "Tech Strategy", "1:1 Mentorship"],
     accentColor: "violet",
   },
 ];
@@ -587,4 +587,66 @@ export const CONTACT_BUDGETS = [
   "$2,000 – $5,000",
   "$5,000 – $15,000",
   "$15,000+",
+];
+
+/* Tools & platforms we build with — shown as a logos/labels strip. */
+export const TECH_STACK: string[] = [
+  "OpenAI",
+  "Claude",
+  "Gemini",
+  "LangChain",
+  "n8n",
+  "Make",
+  "Next.js",
+  "TypeScript",
+  "Supabase",
+  "PostgreSQL",
+  "AWS",
+  "Vercel",
+];
+
+/* Industries we serve, each with an icon path. */
+export const INDUSTRIES: Array<{ label: string; iconPath: string }> = [
+  { label: "Healthcare", iconPath: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.29 1.51 4.04 3 5.5l7 7z" },
+  { label: "Education", iconPath: "M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" },
+  { label: "Real Estate", iconPath: "M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z" },
+  { label: "Finance", iconPath: "M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" },
+  { label: "Logistics", iconPath: "M1 3h15v13H1zM16 8h4l3 3v5h-7zM5.5 19a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 19a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" },
+  { label: "Retail", iconPath: "M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" },
+  { label: "SaaS", iconPath: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" },
+  { label: "Professional Services", iconPath: "M20 7h-4V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM10 5h4v2h-4z" },
+];
+
+/* Frequently asked questions for the FAQ accordion. */
+export const FAQS: Array<{ question: string; answer: string }> = [
+  {
+    question: "How quickly can you start, and how long do projects take?",
+    answer:
+      "Most engagements kick off within a week of the strategy call. Automations and AI agents often ship in 1–3 weeks; larger platforms and business systems run 4–10 weeks depending on scope. We work in short iterations so you see progress every sprint.",
+  },
+  {
+    question: "Do I need technical knowledge to work with you?",
+    answer:
+      "No. You bring the business goal; we handle the technology. We explain decisions in plain language, hand off full documentation, and can train your team so nothing depends on us long-term.",
+  },
+  {
+    question: "What does it cost?",
+    answer:
+      "It depends on scope, but we work to fixed, transparent quotes — no surprise invoices. The free strategy call ends with a clear plan and a price, so you can decide with full information.",
+  },
+  {
+    question: "Will the AI and automations actually save us money?",
+    answer:
+      "That's the point. We target the highest-friction, most repetitive work first — the tasks quietly costing you hours every week — and measure the time and cost saved. Clients typically see 30–70% reduction on the processes we automate.",
+  },
+  {
+    question: "Do you only build new systems, or improve existing ones?",
+    answer:
+      "Both. We frequently add AI and automation on top of the tools you already use — CRM, spreadsheets, internal apps — rather than forcing a rip-and-replace. We meet your stack where it is.",
+  },
+  {
+    question: "Who owns the code and data?",
+    answer:
+      "You do. Everything we build is yours, delivered with documentation and no vendor lock-in. Your data stays in your accounts and infrastructure.",
+  },
 ];

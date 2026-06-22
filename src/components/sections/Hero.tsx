@@ -24,21 +24,21 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Radial glow — teal top-left */}
+      {/* Radial glow — cyan top-left */}
       <div
         className="pointer-events-none absolute -top-32 -left-32 h-[600px] w-[600px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(14,124,123,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
         aria-hidden="true"
       />
 
-      {/* Radial glow — amber bottom-right */}
+      {/* Radial glow — purple bottom-right */}
       <div
         className="pointer-events-none absolute -bottom-40 -right-20 h-[700px] w-[700px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(232,163,61,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(108,99,255,0.14) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         aria-hidden="true"
@@ -74,9 +74,9 @@ export default function Hero() {
             {...fadeUp(0.1)}
             className="font-display text-[2rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[3.4rem] xl:text-6xl text-balance"
           >
-            We Build Digital Transformation.
+            AI Systems That
             <br />
-            <GradientText>Powered by Intelligent Innovation.</GradientText>
+            <GradientText>Work While You Sleep.</GradientText>
           </motion.h1>
 
           {/* Sub-headline */}
@@ -84,9 +84,9 @@ export default function Hero() {
             {...fadeUp(0.2)}
             className="mt-6 max-w-xl font-body text-base leading-relaxed text-ink-muted lg:text-lg"
           >
-            Hornlink Technology designs and delivers smart, reliable, and
-            transformative solutions — AI-powered websites, intelligent automation,
-            and smart business systems that simplify life and empower your business.
+            We design intelligent automation, AI agents, and scalable digital
+            platforms that help businesses save time, cut costs, and grow faster —
+            without hiring more people.
           </motion.p>
 
           {/* CTAs */}
@@ -95,7 +95,7 @@ export default function Hero() {
             className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <Button variant="primary" size="lg" href="/contact">
-              Start a Project
+              Book a Free Strategy Call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -111,9 +111,10 @@ export default function Hero() {
             className="mt-12 flex flex-wrap items-center gap-8 border-t border-cyan/10 pt-8"
           >
             {[
-              { value: "2024", label: "Founded" },
-              { value: "4", label: "Core Service Lines" },
-              { value: "100%", label: "Client-Centric" },
+              { value: "50+", label: "Projects Delivered" },
+              { value: "100%", label: "Client Satisfaction" },
+              { value: "30–70%", label: "Cost Reduction" },
+              { value: "24/7", label: "AI Systems Working" },
             ].map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
                 <span className="font-display text-2xl font-bold text-ink">
@@ -145,7 +146,7 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(14,124,123,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0,145,194,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
       </motion.div>

@@ -12,13 +12,13 @@ export default function Portfolio() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="mb-16 flex flex-col gap-4">
-          <SectionLabel>Selected Work</SectionLabel>
+          <SectionLabel>Impact Stories</SectionLabel>
           <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold tracking-[-0.025em] text-ink">
-            Solutions We&apos;ve Delivered
+            Real Solutions. Real Results.
           </h2>
           <p className="max-w-lg font-body text-base leading-relaxed text-ink-muted">
-            A snapshot of the kind of work we do across our service lines. Every
-            build ships production-ready, tested, and fully documented.
+            We measure impact, not hours — fewer manual tasks, faster decisions,
+            and systems that pay for themselves. Here&apos;s a snapshot.
           </p>
         </AnimatedSection>
 

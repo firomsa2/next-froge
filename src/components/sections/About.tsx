@@ -12,7 +12,7 @@ export default function About() {
         className="pointer-events-none absolute -right-32 top-10 h-[500px] w-[500px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(14,124,123,0.07) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(0,145,194,0.08) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
         aria-hidden="true"

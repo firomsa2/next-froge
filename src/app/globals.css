@@ -6,23 +6,28 @@
   --color-elevated: #F4F7F7;
   --color-floating: #FFFFFF;
 
-  /* Brand accents */
-  --color-cyan: #0E7C7B;   /* deep teal — primary */
-  --color-violet: #E8A33D; /* warm amber — secondary */
+  /* Brand accents — energized AI palette on a light surface.
+     `cyan` = primary (AA-readable on white), `violet` = AI purple secondary,
+     `mint` = neon-green tertiary. Bright variants are for glows/graphics only. */
+  --color-cyan: #0091C2;        /* readable electric cyan — primary */
+  --color-cyan-bright: #00D4FF; /* glow/graphic only (low contrast on white) */
+  --color-violet: #6C63FF;      /* AI purple — secondary */
+  --color-mint: #00B488;        /* neon-green — tertiary accent */
+  --color-mint-bright: #00FFA3; /* glow/graphic only */
 
   /* Typography */
-  --color-ink: #0F2E2E;       /* near-black teal ink */
-  --color-ink-muted: #5B6B6B; /* slate gray */
+  --color-ink: #0B1220;       /* deep AI ink (near-black navy) */
+  --color-ink-muted: #5A6577; /* slate gray */
 
   /* Fonts — set by next/font via CSS variables on <html> */
   --font-display: var(--font-syne), sans-serif;
   --font-body: var(--font-dm-sans), sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", monospace;
 
-  /* Shadows — soft, teal-tinted for a light surface */
-  --shadow-cyan-glow: 0 12px 40px -8px rgba(14, 124, 123, 0.22);
-  --shadow-violet-glow: 0 12px 40px -8px rgba(232, 163, 61, 0.26);
-  --shadow-card: 0 1px 2px 0 rgba(15, 46, 46, 0.04), 0 8px 30px -10px rgba(15, 46, 46, 0.10);
+  /* Shadows — cyan/purple-tinted for a light surface */
+  --shadow-cyan-glow: 0 12px 40px -8px rgba(0, 145, 194, 0.28);
+  --shadow-violet-glow: 0 12px 40px -8px rgba(108, 99, 255, 0.28);
+  --shadow-card: 0 1px 2px 0 rgba(11, 18, 32, 0.04), 0 8px 30px -10px rgba(11, 18, 32, 0.12);
 
   /* Border radius */
   --radius-card: 1rem;
@@ -54,12 +59,12 @@
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: 1px solid rgba(14, 124, 123, 0.12);
-    box-shadow: 0 1px 2px 0 rgba(15, 46, 46, 0.04), 0 8px 30px -12px rgba(15, 46, 46, 0.10);
+    border: 1px solid rgba(0, 145, 194, 0.14);
+    box-shadow: 0 1px 2px 0 rgba(11, 18, 32, 0.04), 0 8px 30px -12px rgba(11, 18, 32, 0.12);
   }
 
   .gradient-text {
-    background: linear-gradient(120deg, #0E7C7B 0%, #E8A33D 100%);
+    background: linear-gradient(110deg, #0091C2 0%, #6C63FF 55%, #00B488 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -67,8 +72,8 @@
 
   .bg-grid {
     background-image:
-      linear-gradient(rgba(14, 124, 123, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(14, 124, 123, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(0, 145, 194, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 145, 194, 0.05) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 }
@@ -86,7 +91,7 @@
 
   body {
     font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-    color: #0F2E2E;
+    color: #0B1220;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -95,12 +100,12 @@
   }
 
   ::selection {
-    background: rgba(14, 124, 123, 0.18);
-    color: #0F2E2E;
+    background: rgba(0, 145, 194, 0.18);
+    color: #0B1220;
   }
 
   :focus-visible {
-    outline: 2px solid #0E7C7B;
+    outline: 2px solid #0091C2;
     outline-offset: 3px;
     border-radius: 4px;
   }
